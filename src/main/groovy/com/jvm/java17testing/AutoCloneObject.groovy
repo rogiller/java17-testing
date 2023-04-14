@@ -1,9 +1,9 @@
-package com.jvm.java17testing
+package com.jvm.java17testing;
 
-import groovy.transform.AutoClone
+import groovy.transform.AutoClone;
 
 @AutoClone
-class AutoCloneObject {
+class AutoCloneObject implements Cloneable {
 
     String name
 

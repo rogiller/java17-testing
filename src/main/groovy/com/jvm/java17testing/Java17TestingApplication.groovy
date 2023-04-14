@@ -4,18 +4,20 @@ import groovy.util.logging.Slf4j
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
+import java.util.Properties;
+
 @SpringBootApplication
-@Slf4j('LOG')
 class Java17TestingApplication {
 
 	static void main(String[] args) {
-		SpringApplication.run(Java17TestingApplication, args)
+		SpringApplication.run(Java17TestingApplication.class, args);
 
-		AutoCloneObject obj1 = new AutoCloneObject(name: 'Roger Diller')
+		AutoCloneObject obj1 = new AutoCloneObject();
+		obj1.setName("Roger Diller");
 
 		AutoCloneObject obj2 = obj1.clone();
 
-		LOG.info("obj2 name: " + obj2.name)
+		System.out.println("obj2 name: " + obj2.getName());
 
 	}
 
